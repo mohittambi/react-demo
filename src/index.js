@@ -1,31 +1,11 @@
 import React from "react";
-import {
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
 import ReactDOM from "react-dom";
+import Main from "./main";
 import './index.css';
-import App from './App';
-import From from './components/form';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <HashRouter>
-    <div>
-      <h1>Project App</h1>
-      <ul className="header">
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/add">Add Details</NavLink></li>
-        <li><NavLink to="/view">Show Details</NavLink></li>
-      </ul>
-      <div className="content">
-        <Route exact path="/" component={App} />
-        <Route path="/add" component={From} />
-        <Route path="/view" component={From} />
-      </div>
-    </div>
-  </HashRouter>,
+  <Main />,
   document.getElementById('root')
 );
 
