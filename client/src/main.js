@@ -11,7 +11,6 @@ const Main = () => {
   return (
     <HashRouter>
       <div>
-        <h1>Project App</h1>
         <ul className="header">
           <li><NavLink exact to="/">Home</NavLink></li>
           <li><NavLink to="/add">Add Details</NavLink></li>
