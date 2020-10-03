@@ -7,6 +7,7 @@ import {
 import App from './App';
 import Home from './home';
 import AddEvent from './pages/add-event';
+import AddGroup from './group';
 
 const Main = () => {
   return (
@@ -21,6 +22,7 @@ const Main = () => {
           <Route exact path="/" component={App} />
           <Route path="/home-page" component={Home} />
           <Route path="/add-event" component={AddEvent} />
+          <Route path="/add-group" component={AddGroup} />
         </div>
       </div>
     </HashRouter>
