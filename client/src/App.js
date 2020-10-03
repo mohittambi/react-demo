@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
 import './App.css';
+import Login from './login';
 
 
 const App = () => {
@@ -14,20 +15,21 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Create a schedule
-        </p>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={openForm}
-        >
-          Add Form
-        </Button>
-      </header>
-    </div>
+    <Login />
+    // <div className="App">
+    //   <header className="App-header">
+    //     <p>
+    //       Create a schedule
+    //     </p>
+    //     <Button
+    //       variant="contained"
+    //       color="primary"
+    //       onClick={openForm}
+    //     >
+    //       Add Form
+    //     </Button>
+    //   </header>
+    // </div>
   );
 }
 

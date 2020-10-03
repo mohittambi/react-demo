@@ -5,21 +5,22 @@ import {
   HashRouter
 } from "react-router-dom";
 import App from './App';
-import From from './components/form';
+import Home from './home';
+import AddEvent from './pages/add-event';
 
 const Main = () => {
   return (
     <HashRouter>
       <div>
         <ul className="header">
-          <li><NavLink exact to="/">Home</NavLink></li>
-          <li><NavLink to="/add">Add Details</NavLink></li>
-          <li><NavLink to="/view">Show Details</NavLink></li>
+          <li><NavLink exact to="/">Login</NavLink></li>
+          <li><NavLink to="/home-page">Home</NavLink></li>
+          <li><NavLink to="/add-event">Add Event</NavLink></li>
         </ul>
         <div className="content">
           <Route exact path="/" component={App} />
-          <Route path="/add" component={From} />
-          <Route path="/view" component={From} />
+          <Route path="/home-page" component={Home} />
+          <Route path="/add-event" component={AddEvent} />
         </div>
       </div>
     </HashRouter>
