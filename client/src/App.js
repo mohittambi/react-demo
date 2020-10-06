@@ -1,10 +1,10 @@
-import React from 'react'
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import './App.css';
-import Login from './login';
-
+import Login from "./login";
+import Footer from "./components/Footer";
+import Home from "./home";
 
 const App = () => {
   const history = useHistory();
@@ -12,25 +12,14 @@ const App = () => {
   const openForm = () => {
     let path = `add`;
     history.push(path);
-  }
+  };
 
   return (
-    <Login />
-    // <div className="App">
-    //   <header className="App-header">
-    //     <p>
-    //       Create a schedule
-    //     </p>
-    //     <Button
-    //       variant="contained"
-    //       color="primary"
-    //       onClick={openForm}
-    //     >
-    //       Add Form
-    //     </Button>
-    //   </header>
-    // </div>
+    <>
+      <Home />
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
