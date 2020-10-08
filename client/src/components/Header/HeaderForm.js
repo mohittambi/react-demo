@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import { BsTrophy } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { AiTwotoneCalendar } from "react-icons/ai";
-import "../../styles/Header/HeaderForm.css";
+import "./HeaderForm.css";
 function HeaderForm() {
   return (
     <div className="form">

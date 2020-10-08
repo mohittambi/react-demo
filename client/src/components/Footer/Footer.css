@@ -51,9 +51,20 @@ a {
   align-items: center;
   margin-top: 5%;
 }
-.icon {
+.icon1,
+.icon2,
+.icon3 {
   padding: 10px;
   font-size: 65px;
+}
+.icon1 {
+  color: #4267b2;
+}
+.icon2 {
+  color: #00acee;
+}
+.icon3 {
+  color: #fbad50;
 }
 .footer {
   color: white;

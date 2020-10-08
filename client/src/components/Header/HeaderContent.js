@@ -1,8 +1,17 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import "../../styles/Header/HeaderContent.css";
+import "./HeaderContent.css";
 import HeaderForm from "./HeaderForm";
 import NavBar from "./NavBar";
+import styled from "styled-components";
+
+const StyledButton = styled(Button)`
+font-size: 15px,
+width: 200px,
+height: 40px,
+word-spacing: 8px,
+`;
+
 function HeaderContent() {
   return (
     <>
@@ -10,25 +19,16 @@ function HeaderContent() {
       <div className="header">
         <div className="header-left">
           <h1> Sports Engagement Platform</h1>
-          <h5>
+          <p>
             <div className="vl">
               Create or join event to build local community <br />
               for daily sport
             </div>
-          </h5>
+          </p>
 
-          <Button
-            style={{
-              fontSize: "15px",
-              width: "200px",
-              height: "40px",
-              wordSpacing: "8px",
-            }}
-            variant="contained"
-            color="secondary"
-          >
+          <StyledButton variant="contained" color="secondary">
             Create Group
-          </Button>
+          </StyledButton>
         </div>
         <div className="header-img">
           <img

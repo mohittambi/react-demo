@@ -3,7 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import { FaFacebook } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
-import "../../styles/Footer/Footer.css";
+import "./Footer.css";
 
 export default function Footer() {
   return (
@@ -51,13 +51,13 @@ export default function Footer() {
         <div className="box" style={{ textAlign: "center" }}>
           <h1 className="head">Follow us</h1>
           <a href="#">
-            <FaFacebook className="icon" style={{ color: "#4267B2" }} />
+            <FaFacebook className="icon1" />
           </a>
           <a href="#">
-            <FiTwitter className="icon" style={{ color: "#00ACEE" }} />
+            <FiTwitter className="icon2" />
           </a>
           <a href="#">
-            <FiInstagram className="icon" style={{ color: "#fbad50 " }} />
+            <FiInstagram className="icon3" />
           </a>
         </div>
 
