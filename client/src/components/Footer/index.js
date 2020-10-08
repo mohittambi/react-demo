@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div className="footer-copyright">
           <a href="#" className="footer">
-            @Copyright Reserve 2000
+            @Copyright Reserve {new Date().getFullYear()}
           </a>
           <a href="#" className="footer">
             Term & Conditions
