@@ -1,7 +1,6 @@
 const db=require('../models');
 const users=db.user;
-const Op=db.Sequelize.Op;
-exports.create=(req,res)=>{
+exports.register=(req,res)=>{
     //first validate
     console.log(req.body);
     if(!req.body.firstName){
@@ -40,66 +39,10 @@ exports.create=(req,res)=>{
         password:req.body.password
     };
     users.create(user).then(data=>{
-        res.status(200).send({message:"Success"});
+        res.status(200).send({message:"User Added"});
     }).catch(err=>{
         res.status(500).send({
             message:err.message
         });
     });
 };
-
-exports.update=(req,res)=>{
-    const userId=req.params.id;
-    console.log(req.params.id);
-    //validating and if found then insert
-    users.update(req.body,{
-        where:{userId:userId}
-    }).then(result=>{
-        if(result==1){
-            res.status(200).send({message:"Success"});
-        }else{
-            res.send({message:"Id not found"});
-        }
-    }).catch(err=>{
-        res.status(500).send({
-            message:"Error updating"+userId
-        });
-    });
-};
-
-exports.delete=(req,res)=>{
-    const userId=req.params.id;
-    console.log(userId);
-    users.destroy({
-        where:{userId:userId}
-    }).then(result=>{
-        if(result==1)res.status(200).send({message:"Success"});
-        else res.send({message:"Id not found"});
-    }).catch(err=>{
-        res.status(500).send({
-            message:"Error deleting"+userId
-        });
-    });
-};
-
-exports.info=(req,res)=>{
-    const userId=req.params.id;
-    console.log(userId);
-
-    users.findByPk(userId).then(data=>{
-        res.send(data);
-    }).catch(err=>{
-        res.status(500).send({
-            message:"Error finding"+userId
-        });
-    });
-};
-
-exports.list=(req,res)=>{
-    users.findAll().then(data=>{
-        res.send(data);
-    }).catch(err=>{
-        res.status(200).send({message:"error listing"});
-    });
-};
-

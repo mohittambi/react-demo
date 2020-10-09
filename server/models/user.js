@@ -34,6 +34,10 @@ module.exports=(sequelize,Sequelize)=>{
         password:{
             type: Sequelize.STRING,
             allowNull: false
+        },
+        isActive:{
+            type:Sequelize.INTEGER,
+            defaultValue:'0'
         }
     });
     return user;
