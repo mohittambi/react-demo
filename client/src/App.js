@@ -1,10 +1,7 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import Login from "./login";
 import Footer from "./components/Footer";
-import Home from "./home";
+import Main from "./main";
 
 const App = () => {
   const history = useHistory();
@@ -16,7 +13,7 @@ const App = () => {
 
   return (
     <>
-      <Home />
+      <Main />
       <Footer />
     </>
   );
