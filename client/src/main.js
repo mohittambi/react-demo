@@ -7,8 +7,8 @@ import {
 import Home from './home';
 import AddEvent from './pages/add-event';
 import AddGroup from './group';
-import Login from "./login";
 import SignUp from "./signup";
+import SignIn from "./signin";
 
 const Main = () => {
   return (
@@ -22,8 +22,8 @@ const Main = () => {
           <Route exact path="/" component={Home} />
           <Route path="/add-event" component={AddEvent} />
           <Route path="/add-group" component={AddGroup} />
-          <Route path="/login" component={Login} />
           <Route path="/sign-up" component={SignUp} />
+          <Route path="/login" component={SignIn} />
         </div>
       </div>
     </HashRouter>
