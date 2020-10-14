@@ -5,7 +5,6 @@ function Home() {
   return (
     <>
       <Header />
-      <div style={{ height: "100vh", backgroundColor: "white" }}></div>
     </>
   );
 }

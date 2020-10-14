@@ -1,32 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-
+/* 
 .container {
-  background-color: rgb(230, 225, 225);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  justify-content: space-evenly;
-  margin-top: 50px;
-}
-.box {
-  width: 20%;
-  margin-top: 40px;
-  max-width: 100%;
-}
-ul {
+  background-image: linear-gradient(
+    to top,
+    rgb(187, 184, 184),
+    rgb(253, 247, 247)
+  ) !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  width: 95% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  justify-content: flex-start !important;
+  margin-top: 50px !important;
+  align-items: flex-start;
+  margin: 0 auto !important;
+} */
+/* .box,
+.boxicon {
+  width: 15% !important;
+  margin-top: 40px !important;
+  max-width: 100% !important;
+  background-color: transparent;
+} */
+/* .boxicon {
+  width: 20% !important;
+  margin-left: 5%;
+} */
+/* ul {
   list-style: none;
   margin-left: -37px;
   margin-top: 10px;
-}
-.head {
+} */
+/* .head {
   font-family: "Lora", serif;
   font-size: 20px;
   color: rgb(253, 38, 74);
-}
+} */
 p,
 ul,
 a {
@@ -34,13 +46,13 @@ a {
   font-size: 15px;
   color: rgb(100, 100, 100);
 }
-li {
+/* li {
   line-height: 25px;
-}
-a {
+} */
+/* a {
   text-decoration: none;
-}
-.footer-copyright {
+} */
+/* .footer-copyright {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -50,7 +62,7 @@ a {
   justify-content: space-around;
   align-items: center;
   margin-top: 5%;
-}
+} */
 .icon1,
 .icon2,
 .icon3 {

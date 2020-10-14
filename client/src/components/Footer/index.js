@@ -1,14 +1,64 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { FaFacebook } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
+import styled from "styled-components";
 import "./Footer.css";
+
+const StyledContainer = styled.div`
+  background-image: linear-gradient(
+    to top,
+    rgb(187, 184, 184),
+    rgb(253, 247, 247)
+  );
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 95%;
+  max-width: 100%;
+  height: auto;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin: 0 auto;
+  .box,
+  .boxicon {
+    width: 15%;
+    margin-top: 40px;
+    max-width: 100%;
+    background-color: transparent;
+
+    ul {
+      list-style: none;
+      margin-left: -37px;
+      margin-top: 10px;
+      li {
+        line-height: 25px;
+      }
+    }
+    .head {
+      font-family: "Lora", serif;
+      font-size: 20px;
+      color: rgb(253, 38, 74);
+      text-align: left;
+    }
+  }
+  .footer-copyright {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(253, 38, 74);
+    width: 100%;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+  }
+`;
 
 export default function Footer() {
   return (
     <React.Fragment>
-      <Typography className="container">
+      <StyledContainer>
         <div className="box">
           <h1 className="head">About Fit N Club</h1>
           <p>
@@ -48,7 +98,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="box" style={{ textAlign: "center" }}>
+        <div className="boxicon" style={{ textAlign: "center" }}>
           <h1 className="head">Follow us</h1>
           <a href="#">
             <FaFacebook className="icon1" />
@@ -72,7 +122,7 @@ export default function Footer() {
             Privacy and Policy
           </a>
         </div>
-      </Typography>
+      </StyledContainer>
     </React.Fragment>
   );
 }
