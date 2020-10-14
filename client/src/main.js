@@ -1,11 +1,12 @@
 import React from "react";
-import { Route, NavLink, HashRouter } from "react-router-dom";
+import { Route, NavLink, BrowserRouter } from "react-router-dom";
+import styled from "styled-components";
+
 import Home from "./home";
 import AddEvent from "./pages/add-event";
 import AddGroup from "./group";
 import SignUp from "./signup";
 import SignIn from "./signin";
-import styled from "styled-components";
 
 const NavDiv = styled.div`
   background-color: #fd264a;
@@ -14,6 +15,7 @@ const NavDiv = styled.div`
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+    margin: 0;
     & > li {
       font-size: 2.5em;
       list-style: none;
@@ -21,27 +23,23 @@ const NavDiv = styled.div`
       margin-bottom: 1%;
     }
   }
-  ul > li:nth-child(2) {
+  ul > li:last-child {
     margin-right: 50px;
   }
 `;
 
 const Main = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div>
-        <NavDiv>
-          <ul>
-            <li>
-              <NavLink exact to="/">
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/add-event">Add Event</NavLink>
-            </li>
-          </ul>
-        </NavDiv>
+        {(window.location.pathname !== '/') &&
+          (<NavDiv>
+            <ul>
+              <li><NavLink exact to="/">Home</NavLink></li>
+              <li><NavLink to="/add-event">Add Event</NavLink></li>
+            </ul>
+          </NavDiv>)
+        }
         <div className="content">
           <Route exact path="/" component={Home} />
           <Route path="/add-event" component={AddEvent} />
@@ -50,7 +48,7 @@ const Main = () => {
           <Route path="/login" component={SignIn} />
         </div>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

@@ -1,14 +1,12 @@
 import React from "react";
-import { FcGoogle } from "react-icons/fc";
-import "./Signin.css";
 import styled from "styled-components";
-// import Input from "@material-ui/core/Input";
-// import StyledInputComponent from "../atoms/InputField";
-// import StyledButtonComponent from "../atoms/Button";
-import StyledTypographyComponent from "../atoms/Textarea";
+import { FcGoogle } from "react-icons/fc";
+import Typography from "../atoms/typography/Typography";
 
+import "./Signin.css";
 const StyledSecond = styled.div`
   width: 50%;
+  margin: 0 auto;
   background-color: rgb(228, 225, 225);
   .header {
     margin-top: 10%;
@@ -17,16 +15,14 @@ const StyledSecond = styled.div`
     font-size: 2.3rem;
     color: #003b6f;
     font-family: "Roboto", sans-serif;
-
     font-weight: 500;
   }
 
   .logingoogle {
     background-color: white;
     text-align: center;
-    width: 70%;
-    margin-left: 5%;
-    margin-top: 10%;
+    width: 50%;
+    margin: 0 auto;
     justify-content: center;
     display: flex;
     flex-direction: row;
@@ -82,30 +78,26 @@ const StyledLogin = styled.div`
   width: 70%;
 `;
 
-function SignInForm() {
+const SignInForm = () => {
   return (
     <StyledSecond>
-      <div className="header">Welcome Back</div>
-      <form>
-        <StyledBox>
-          <div className="box1">
-            <StyledTypographyComponent>
-              Username/Email
-            </StyledTypographyComponent>
-            <StyledInputComponent />
-          </div>
-          <div className="box1">
-            <StyledTypographyComponent>Password</StyledTypographyComponent>
-            <StyledInputComponent />
-          </div>
-        </StyledBox>
-        <StyledLogin>
-          <div className="btn">
-            <StyledButtonComponent>Login</StyledButtonComponent>
-          </div>
-          <a href="#">Forgot Password?</a>
-        </StyledLogin>
-      </form>
+      <p className="header">Welcome Back</p>
+      <StyledBox>
+        <div className="box1">
+          <Typography text="Username/Email" />
+          <StyledInputComponent />
+        </div>
+        <div className="box1">
+          <Typography text="Password" />
+          <StyledInputComponent />
+        </div>
+      </StyledBox>
+      <StyledLogin>
+        <div className="btn">
+          <StyledButtonComponent text="Login" />
+        </div>
+        <a href="#">Forgot Password?</a>
+      </StyledLogin>
 
       <div className="logingoogle">
         <a href="#">
@@ -118,4 +110,5 @@ function SignInForm() {
     </StyledSecond>
   );
 }
+
 export default SignInForm;

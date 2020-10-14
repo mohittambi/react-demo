@@ -14,12 +14,11 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 95%;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   justify-content: space-around;
   align-items: flex-start;
-  margin: 0 auto;
+
   .box,
   .boxicon {
     width: 15%;
@@ -29,7 +28,6 @@ const StyledContainer = styled.div`
 
     ul {
       list-style: none;
-      margin-left: -37px;
       margin-top: 10px;
       li {
         line-height: 25px;
@@ -55,7 +53,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-export default function Footer() {
+const Footer = () => {
   return (
     <React.Fragment>
       <StyledContainer>
@@ -126,3 +124,5 @@ export default function Footer() {
     </React.Fragment>
   );
 }
+
+export default Footer;

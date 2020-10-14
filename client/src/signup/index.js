@@ -1,7 +1,6 @@
 import React from "react";
 import SignUpForm from "../components/Signup";
 import "../components/Signup/Signup.css";
-// import StyledTypographyComponent from "../components/atoms/Textarea";
 import styled from "styled-components";
 import Typography from "@material-ui/core/Typography";
 
@@ -17,7 +16,7 @@ const StyledMain = styled.div`
   flex-direction: row;
 `;
 
-function SignUp() {
+const SignUp = () => {
   return (
     <StyledMain>
       <div>
@@ -28,7 +27,7 @@ function SignUp() {
         <img
           src="https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg"
           alt="img"
-        ></img>
+        />
       </div>
       <SignUpForm />
     </StyledMain>
