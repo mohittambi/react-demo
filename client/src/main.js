@@ -9,18 +9,26 @@ import SignUp from "./signup";
 import SignIn from "./signin";
 
 const NavDiv = styled.div`
-  background-color: #fd264a;
+  background: #c9082a 0% 0% no-repeat padding-box;
+
   & > ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
     margin: 0;
+
     & > li {
-      font-size: 2.5em;
+      font-size: 2em;
+      text-decoration: none;
       list-style: none;
+
       font-weight: 800;
       margin-bottom: 1%;
+      .nav {
+        color: white;
+        text-decoration: none;
+      }
     }
   }
   ul > li:last-child {
@@ -32,14 +40,22 @@ const Main = () => {
   return (
     <BrowserRouter>
       <div>
-        {(window.location.pathname !== '/') &&
-          (<NavDiv>
+        {window.location.pathname !== "/" && (
+          <NavDiv>
             <ul>
-              <li><NavLink exact to="/">Home</NavLink></li>
-              <li><NavLink to="/add-event">Add Event</NavLink></li>
+              <li>
+                <NavLink exact to="/" className="nav">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/add-event" className="nav">
+                  Add Event
+                </NavLink>
+              </li>
             </ul>
-          </NavDiv>)
-        }
+          </NavDiv>
+        )}
         <div className="content">
           <Route exact path="/" component={Home} />
           <Route path="/add-event" component={AddEvent} />

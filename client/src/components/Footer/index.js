@@ -4,52 +4,59 @@ import { FiTwitter } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import styled from "styled-components";
 import "./Footer.css";
+import Typography from "@material-ui/core/Typography";
+
+const StyledTypography = styled.h2`
+  font: normal normal medium 25px/30px Barlow;
+  letter-spacing: 0px;
+  color: #c9082a;
+`;
 
 const StyledContainer = styled.div`
-  background-image: linear-gradient(
-    to top,
-    rgb(187, 184, 184),
-    rgb(253, 247, 247)
-  );
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-  justify-content: space-around;
-  align-items: flex-start;
-
-  .box,
-  .boxicon {
-    width: 15%;
-    margin-top: 40px;
-    max-width: 100%;
-    background-color: transparent;
-
-    ul {
-      list-style: none;
-      margin-top: 10px;
-      li {
-        line-height: 25px;
-      }
-    }
-    .head {
-      font-family: "Lora", serif;
-      font-size: 20px;
-      color: rgb(253, 38, 74);
-      text-align: left;
-    }
-  }
-  .footer-copyright {
+   {
+    background: #efefef 0% 0% no-repeat padding-box;
+    opacity: 0.6;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: rgb(253, 38, 74);
     width: 100%;
-    height: 10vh;
+    height: auto;
     justify-content: space-around;
-    align-items: center;
-    margin-top: 5%;
+
+    .box,
+    .boxicon {
+      width: 15%;
+      margin-top: 40px;
+      max-width: 100%;
+    }
+    .boxicon {
+      width: 20%;
+      margin-left: 5%;
+    }
+    ul {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      font-size: 15px;
+      color: rgb(100, 100, 100);
+    }
+
+    .footer-copyright {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      background-color: rgb(253, 38, 74);
+      width: 100%;
+      height: 10vh;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 5%;
+      a {
+        color: white;
+        font-size: 20px;
+      }
+    }
   }
 `;
 
@@ -58,16 +65,15 @@ const Footer = () => {
     <React.Fragment>
       <StyledContainer>
         <div className="box">
-          <h1 className="head">About Fit N Club</h1>
-          <p>
+          <StyledTypography>About Fit N Club</StyledTypography>
+          <Typography>
             lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
             ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum
             lorem ipsum lorem ipsum
-          </p>
+          </Typography>
         </div>
         <div className="box">
-          <h1 className="head">Supports</h1>
-
+          <StyledTypography>Supports</StyledTypography>
           <ul>
             <li>
               <a href="#">Centers</a>
@@ -84,9 +90,11 @@ const Footer = () => {
           </ul>
         </div>
         <div className="box">
-          <h1 className="head">Contacts</h1>
+          <StyledTypography>Contacts</StyledTypography>
 
-          <p> 74th Gali raja chowk, harihar nagar old colony, Jaipur-10</p>
+          <Typography>
+            74th Gali raja chowk, harihar nagar old colony, Jaipur-10
+          </Typography>
           <ul>
             <li>
               <a href="#">+9924447684</a>
@@ -97,7 +105,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="boxicon" style={{ textAlign: "center" }}>
-          <h1 className="head">Follow us</h1>
+          <StyledTypography>Follow us</StyledTypography>
           <a href="#">
             <FaFacebook className="icon1" />
           </a>
@@ -123,6 +131,6 @@ const Footer = () => {
       </StyledContainer>
     </React.Fragment>
   );
-}
+};
 
 export default Footer;

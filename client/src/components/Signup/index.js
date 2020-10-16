@@ -1,39 +1,25 @@
 import React from "react";
 import Checkbox from "@material-ui/core/Checkbox";
-import Button from "@material-ui/core/Button";
 import { FcGoogle } from "react-icons/fc";
 import styled from "styled-components";
-import Typography from "@material-ui/core/Typography";
 
-const StyledCreateButton = styled.button`
-  background-color: rgb(253, 38, 74);
-  color: #fff;
-  padding: 7px 14px;
-  margin-left: 5%;
-  font-size: 1.2rem;
-  margin-top: 3%;
-  border: none;
-`;
-const StyledTypography = styled(Typography)`
-  margin-bottom: 0.5%;
-  font-family: "Lora", serif;
-  width: 200px;
-  height: 40px;
-  border: none;
-  margin-left: 5% !important;
-  color: #003b6f;
-`;
+import Typography from "../atoms/typography/Typography";
+import Button from "../atoms/button/Button";
+import Input from "../atoms/input/InputField";
+
 const StyledSecondcontainer = styled.div`
   width: 50%;
-  background-color: rgb(228, 225, 225);
+  background: #f5f5f5 0% 0% no-repeat padding-box;
   height: auto;
   margin-left: 15%;
   .header {
     text-align: right;
     margin-top: 5%;
-    background-color: transparent;
     max-width: 100%;
     margin-right: 8%;
+    a {
+      text-decoration: none;
+    }
   }
   .signupgoogle {
     background-color: white;
@@ -51,15 +37,45 @@ const StyledSecondcontainer = styled.div`
       margin-top: 1%;
     }
     .signup {
-      color: #003b6f;
       margin-left: 1%;
-      background-color: transparent;
       font-size: 1.3rem;
       margin-top: 2.5%;
-      font-family: "Lora", serif;
+
+      font: normal normal medium 20px/24px Barlow;
+      letter-spacing: 0px;
+      color: #17408b;
     }
   }
 `;
+
+const StyledTypography = {
+  marginBottom: "0.5%",
+  width: "200px",
+  height: "40px",
+  border: "none",
+  marginLeft: "5% ",
+  color: "#003b6f",
+};
+
+const StyledCreateButton = {
+  background: "#C9082A 0% 0% no-repeat padding-box",
+  color: "#fff",
+  padding: "7px 14px",
+  marginLeft: "5%",
+  fontSize: "1.2rem",
+  marginTop: "3%",
+  border: "none",
+};
+
+const StyledInput = {
+  border: "none",
+  color: "#003b6f",
+  width: "290px",
+  marginLeft: "10px",
+  borderRadius: "7px",
+  height: "60%",
+};
+
 const StyledBox = styled.div`
   display: flex;
   flex-direction: row;
@@ -74,58 +90,49 @@ const StyledCheckbox = styled.div`
   margin-top: 7%;
   margin-left: 4%;
 `;
-const StyledInput = styled.input`
-  border: none;
-  margin-left: 5%;
-  color: #003b6f;
-  width: 330px;
-  margin-left: 10px;
-  border-radius: 7px;
-  height: 60%;
-`;
 
 function SignUpForm() {
   return (
     <StyledSecondcontainer>
       <div className="header">
-        <a href="signin">
+        <a href="login">
           Already a memeber? <b style={{ color: "#003b6f" }}>Sign in</b>
         </a>
       </div>
       <form>
         <StyledBox>
           <div>
-            <StyledTypography>Name</StyledTypography>
-            <StyledInput />
+            <Typography style={StyledTypography} text="Name" />
+            <Input style={StyledInput} />
           </div>
           <div>
-            <StyledTypography>User Name</StyledTypography>
-            <StyledInput />
+            <Typography style={StyledTypography} text="User Name" />
+            <Input style={StyledInput} />
           </div>
         </StyledBox>
         <StyledBox>
           <div>
-            <StyledTypography>Phone No.</StyledTypography>
-            <StyledInput />
+            <Typography style={StyledTypography} text="Phone No." />
+            <Input style={StyledInput} />
           </div>
           <div>
-            <StyledTypography>Email Id</StyledTypography>
-            <StyledInput />
+            <Typography style={StyledTypography} text="Email Id" />
+            <Input style={StyledInput} />
           </div>
         </StyledBox>
         <StyledBox>
           <div>
-            <StyledTypography>Password</StyledTypography>
-            <StyledInput />
+            <Typography style={StyledTypography} text="Password" />
+            <Input style={StyledInput} />
           </div>
           <div>
-            <StyledTypography>Confirm Password</StyledTypography>
-            <StyledInput />
+            <Typography style={StyledTypography} text="Confirm Password" />
+            <Input style={StyledInput} />
           </div>
         </StyledBox>
-        <div className="box2">
+        <div>
           <StyledCheckbox>
-            <div className="icon">
+            <div>
               <Checkbox />
             </div>
             <p>
@@ -133,7 +140,7 @@ function SignUpForm() {
               and privacy policy
             </p>
           </StyledCheckbox>
-          <StyledCreateButton>Create Account</StyledCreateButton>
+          <Button style={StyledCreateButton}>Create Account</Button>
         </div>
       </form>
 

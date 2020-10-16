@@ -5,9 +5,6 @@ const StyledInputComponent = styled.input`
   width: auto;
 `;
 const Input = ({ ...props }) => {
-  return <StyledInputComponent
-    {...props}
-    type={props.type || "text"}
-  />;
+  return <StyledInputComponent {...props} type={props.type || "text"} />;
 };
 export default Input;
