@@ -6,8 +6,6 @@ import Typography from "../components/atoms/typography/Typography";
 const StyledTypography = {
   marginLeft: "15% ",
   fontSize: "1.2rem",
-  font: "normal normal medium 20px/24px Barlow",
-  letterSpacing: "0px",
   color: "#17408b",
 };
 
@@ -22,8 +20,6 @@ const StyledMain = styled.div`
     height: 100vh;
   }
   h1 {
-    font: normal normal bold 28px/34px Barlow;
-    letter-spacing: 0px;
     color: #17408b;
     margin-left: 15%;
     margin-top: 10%;

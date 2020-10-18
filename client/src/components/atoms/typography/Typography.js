@@ -6,7 +6,13 @@ const StyledTypography = styled.p`
 `;
 
 const Typography = ({ text, ...props }) => {
-  return <StyledTypography {...props}>{text}</StyledTypography>;
+  return (
+    <StyledTypography
+      {...props}
+    >
+      {text}
+    </StyledTypography>
+  );
 };
 
 export default Typography;

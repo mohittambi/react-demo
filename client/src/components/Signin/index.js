@@ -11,8 +11,6 @@ const StyledTypography = {
   marginTop: "10%",
   textAlign: "start",
   marginLeft: "9%",
-  font: "normal normal bold 28px/34px Barlow",
-  letterSpacing: "0px",
   color: Colors.blue,
 
   opacity: "1",
@@ -44,8 +42,6 @@ const StyledInputComponent = styled(Input)`
 
 const TypographyContent = {
   textAlign: "left",
-  font: "normal normal medium 18px/22px Barlow",
-  letterSpacing: "0px",
   color: "#17408B",
   opacity: "1",
   fontSize: "1.3rem",
@@ -59,8 +55,6 @@ const StyledLogin = styled.div`
   width: 70%;
   a {
     text-decoration: none;
-    font: normal normal normal 15px/18px Barlow;
-    letter-spacing: 0px;
     color: #17408b;
   }
 `;
