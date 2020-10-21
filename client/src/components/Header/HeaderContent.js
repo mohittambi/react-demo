@@ -32,7 +32,7 @@ const StyledHeader = styled.div`
   letter-spacing: 0px;
   color: #17408b;
   opacity: 1;
-  margin-top: 181px;
+  margin-top: 7%;
   margin-left: 20px;
   display: flex;
   flex-direction: row;
@@ -40,6 +40,7 @@ const StyledHeader = styled.div`
     width: 50%;
     h2 {
       line-height: 70px;
+    
     }
     p {
       text-align: left;

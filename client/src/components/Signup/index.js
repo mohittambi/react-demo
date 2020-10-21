@@ -92,6 +92,19 @@ const StyledCheckbox = styled.div`
 `;
 
 function SignUpForm() {
+
+
+  const handleChange = () => {
+    console.log("Registering")
+  }
+
+  const handleCreate = () => {
+    console.log("Create Account")
+  }
+
+  const handleSign = () => {
+    console.log("Signup")
+  }
   return (
     <StyledSecondcontainer>
       <div className="header">
@@ -123,28 +136,28 @@ function SignUpForm() {
         <StyledBox>
           <div>
             <Typography style={StyledTypography} text="Password" />
-            <Input style={StyledInput} />
+            <Input style={StyledInput} type="password" />
           </div>
           <div>
             <Typography style={StyledTypography} text="Confirm Password" />
-            <Input style={StyledInput} />
+            <Input style={StyledInput} type="password" />
           </div>
         </StyledBox>
         <div>
           <StyledCheckbox>
             <div>
-              <Checkbox />
+              <Checkbox onClick={handleChange} />
             </div>
             <p>
-              By registring on this website you agree to our Terms of services
+              By registering on this website you agree to our Terms of services
               and privacy policy
             </p>
           </StyledCheckbox>
-          <Button style={StyledCreateButton}>Create Account</Button>
+          <Button style={StyledCreateButton} onClick={handleCreate}>Create Account</Button>
         </div>
       </form>
 
-      <div className="signupgoogle">
+      <div className="signupgoogle" onClick={handleSign}>
         <FcGoogle className="googleicon" />
         <div className="signup">Sign up with Google</div>
       </div>

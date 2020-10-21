@@ -117,7 +117,7 @@ const SignInForm = () => {
         </div>
         <div className="box1">
           <Typography style={TypographyContent} text="Password" />
-          <StyledInputComponent />
+          <StyledInputComponent type="password" />
         </div>
       </StyledBox>
       <StyledLogin>

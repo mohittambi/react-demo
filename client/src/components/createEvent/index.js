@@ -185,8 +185,13 @@ const StyledTextField = {
     opacity: "0.3"
 }
 
+
+
 const CreateEvent = () => {
 
+    const handleChange = () => {
+        console.log("hiii Anu")
+    }
 
     return (
         <div >
@@ -249,7 +254,7 @@ const CreateEvent = () => {
 
                     <div style={ContainerRight}>
                         <Typography text="Add Members" style={AddmemberHeading} />
-                        <BsPlusSquare style={PlusButton} />
+                        <BsPlusSquare style={PlusButton} onClick={handleChange} />
                         <div>
                             <Input style={AddInput} placeholder="Enter Email Id (Non Menbers)"></Input><Button style={InviteButton} >Send Invite</Button>
                         </div>
@@ -265,7 +270,7 @@ const CreateEvent = () => {
                             <RadioButtonsGroup style={{ marginTop: "4%" }} />
                         </div>
                         <div style={{ textAlign: "right", marginRight: "29%" }}>
-                            <Button style={StartedButton}>
+                            <Button style={StartedButton}  >
                                 Let's Get Started
                                 <GrLinkNext style={PlayButton} />
                             </Button>

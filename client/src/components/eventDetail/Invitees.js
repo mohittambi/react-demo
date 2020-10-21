@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 const Invitees = () => {
 
-    const [images, setImages] = useState(['https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg'])
+    const [images] = useState(['https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg', 'https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg'])
 
     const InviteesContainer = {
         display: "flex",
