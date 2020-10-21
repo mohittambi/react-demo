@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Checkbox from "@material-ui/core/Checkbox";
 import { FcGoogle } from "react-icons/fc";
 import styled from "styled-components";
@@ -87,7 +87,48 @@ const StyledCheckbox = styled.div`
   margin-left: 4%;
 `;
 
-const signUpForm = () => {
+const SignUpForm = () => {
+
+  const [name, setName] = useState('')
+  const [username, setUsername] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [terms, setTerms] = useState(false)
+
+
+  const onNameChange = (event) => {
+    setName(event.target.value)
+  }
+  const onUsernameChange = (event) => {
+    setUsername(event.target.value)
+  }
+  const onPhoneChange = (event) => {
+    setPhone(event.target.value)
+  }
+  const onEmailChange = (event) => {
+    setEmail(event.target.value)
+  }
+  const onPasswordChange = (event) => {
+    setPassword(event.target.value)
+  }
+  const onConfirmPasswordChange = (event) => {
+    setConfirmPassword(event.target.value)
+  }
+
+  const onSubmit = () => {
+    if (password === confirmPassword && terms) {
+      const info = {name, username, phone, email, password, confirmPassword}
+      window.location.assign("/")
+      console.log(info)
+    } else if (password !== confirmPassword) {
+        alert('Passwords did not Match. Try Again')
+    } else {
+        alert('Check On the Terms and Conditions and Privacy Policy')
+    }
+  }
+
   return (
     <StyledSecondcontainer>
       <StyledTopText>
@@ -99,41 +140,41 @@ const signUpForm = () => {
       <StyledBox>
         <div>
           <StyledTypography text="Name" />
-          <StyledInput onChange={() => { }} />
+          <StyledInput type='text' onChange={(event) => onNameChange(event)} />
         </div>
         <div>
           <StyledTypography text="User Name" />
-          <StyledInput onChange={() => { }} />
+          <StyledInput type='text' onChange={(event) => onUsernameChange(event)} />
         </div>
       </StyledBox>
       <StyledBox>
         <div>
           <StyledTypography text="Phone No." />
-          <StyledInput onChange={() => { }} />
+          <StyledInput type='phone' onChange={(event) => onPhoneChange(event)} />
         </div>
         <div>
           <StyledTypography text="Email Id" />
-          <StyledInput onChange={() => { }} />
+          <StyledInput type='email' onChange={(event) => onEmailChange(event)} />
         </div>
       </StyledBox>
       <StyledBox>
         <div>
           <StyledTypography text="Password" />
-          <StyledInput onChange={() => { }} />
+          <StyledInput type='password' onChange={(event) => onPasswordChange(event)} />
         </div>
         <div>
           <StyledTypography text="Confirm Password" />
-          <StyledInput onChange={() => { }} />
+          <StyledInput type='password' onChange={(event) => onConfirmPasswordChange(event)} />
         </div>
       </StyledBox>
       <div>
         <StyledCheckbox>
           <div>
-            <Checkbox />
+            <Checkbox onClick={() => setTerms(!terms) }/>
           </div>
           <Typography text="By registring on this website you agree to our Terms of services and privacy policy"/>
         </StyledCheckbox>
-        <StyledCreateButton label="Create Account"/>
+        <StyledCreateButton onClick={() => onSubmit()} label="Create Account"/>
       </div>
 
       <div className="signupgoogle">
@@ -143,4 +184,4 @@ const signUpForm = () => {
     </StyledSecondcontainer>
   );
 }
-export default signUpForm;
+export default SignUpForm;
