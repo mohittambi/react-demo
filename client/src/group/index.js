@@ -1,5 +1,5 @@
 import React, {useReducer, useEffect} from "react";
-import Typography from "@material-ui/core/Typography";
+import Typography from "../../src/components/atoms/typography/Typography";
 import TextField from "@material-ui/core/TextField";
 
 import {
@@ -25,7 +25,7 @@ const GroupPage = ({ savedGroupData, ...props}) => {
 
 	return (
 		<React.Fragment>
-			<Typography>Group Page</Typography>
+			<Typography text="Group Page" />
 			<TextField id="outlined-basic" label="Group Name" variant="outlined" />
 		</React.Fragment>
 	)

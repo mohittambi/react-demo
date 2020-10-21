@@ -1,11 +1,29 @@
-import React, {useState} from "react";
-import Checkbox from "@material-ui/core/Checkbox";
-import { FcGoogle } from "react-icons/fc";
+import React, { useReducer } from "react";
+import { connect } from 'react-redux';
+
 import styled from "styled-components";
 
+import Checkbox from "@material-ui/core/Checkbox";
 import Typography from "../atoms/typography/Typography";
 import Button from "../atoms/button/Button";
 import Input from "../atoms/input/InputField";
+
+import { FcGoogle } from "react-icons/fc";
+
+import {
+  signUpUser,
+} from './store/actions';
+import {
+  SET_NAME,
+  SET_USERNAME,
+  SET_PHONE,
+  SET_EMAIL,
+  SET_PASSWORD,
+  SET_CONFIRMPASSWORD,
+  SET_TERMS,
+  initState,
+  signUpReducer,
+} from "./helpers/signup-state";
 
 const StyledSecondcontainer = styled.div`
   width: 50%;
@@ -87,49 +105,36 @@ const StyledCheckbox = styled.div`
   margin-left: 4%;
 `;
 
-const SignUpForm = () => {
+const SignUpForm = (props) => {
+  const [state, dispatch] = useReducer(
+    signUpReducer,
+    {},
+    initState
+  );
 
-  const [name, setName] = useState('')
-  const [username, setUsername] = useState('')
-  const [phone, setPhone] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
-  const [terms, setTerms] = useState(false)
-
-
-  const onNameChange = (event) => {
-    setName(event.target.value)
-  }
-  const onUsernameChange = (event) => {
-    setUsername(event.target.value)
-  }
-  const onPhoneChange = (event) => {
-    setPhone(event.target.value)
-  }
-  const onEmailChange = (event) => {
-    setEmail(event.target.value)
-  }
-  const onPasswordChange = (event) => {
-    setPassword(event.target.value)
-  }
-  const onConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value)
-  }
+  const {
+    name,
+    username,
+    phone,
+    email,
+    password,
+    confirmPassword,
+    terms
+  } = state;
 
   const handleSign = () => {
     console.log('sign in')
   };
 
   const onSubmit = () => {
-    if (password === confirmPassword && terms) {
-      const info = {name, username, phone, email, password, confirmPassword}
-      window.location.assign("/")
-      console.log(info)
+    if ((password === confirmPassword) && terms) {
+      const userDetails = { name, username, phone, email, password, confirmPassword }
+      console.log(userDetails)
+      // props.signUpUser(userDetails);
     } else if (password !== confirmPassword) {
-        alert('Passwords did not Match. Try Again')
+      alert('Passwords did not Match. Try Again')
     } else {
-        alert('Check On the Terms and Conditions and Privacy Policy')
+      alert('Check On the Terms and Conditions and Privacy Policy')
     }
   }
 
@@ -144,41 +149,41 @@ const SignUpForm = () => {
       <StyledBox>
         <div>
           <StyledTypography text="Name" />
-          <StyledInput type='text' onChange={(event) => onNameChange(event)} />
+          <StyledInput type='text' onChange={(event) => dispatch({type: SET_NAME, data: event.target.value})} />
         </div>
         <div>
           <StyledTypography text="User Name" />
-          <StyledInput type='text' onChange={(event) => onUsernameChange(event)} />
+          <StyledInput type='text' onChange={(event) => dispatch({type: SET_USERNAME, data: event.target.value})} />
         </div>
       </StyledBox>
       <StyledBox>
         <div>
           <StyledTypography text="Phone No." />
-          <StyledInput type='phone' onChange={(event) => onPhoneChange(event)} />
+          <StyledInput type='phone' onChange={(event) => dispatch({type: SET_PHONE, data: event.target.value})} />
         </div>
         <div>
           <StyledTypography text="Email Id" />
-          <StyledInput type='email' onChange={(event) => onEmailChange(event)} />
+          <StyledInput type='email' onChange={(event) => dispatch({type: SET_EMAIL, data: event.target.value})} />
         </div>
       </StyledBox>
       <StyledBox>
         <div>
           <StyledTypography text="Password" />
-          <StyledInput type='password' onChange={(event) => onPasswordChange(event)} />
+          <StyledInput type='password' onChange={(event) => dispatch({type: SET_PASSWORD, data: event.target.value})} />
         </div>
         <div>
           <StyledTypography text="Confirm Password" />
-          <StyledInput type='password' onChange={(event) => onConfirmPasswordChange(event)} />
+          <StyledInput type='password' onChange={(event) => dispatch({type: SET_CONFIRMPASSWORD, data: event.target.value})} />
         </div>
       </StyledBox>
       <div>
         <StyledCheckbox>
           <div>
-            <Checkbox onClick={() => setTerms(!terms) }/>
+            <Checkbox onClick={() => dispatch({ type: SET_TERMS, data: !terms })} />
           </div>
-          <Typography text="By registring on this website you agree to our Terms of services and privacy policy"/>
+          <Typography text="By registring on this website you agree to our Terms of services and privacy policy" />
         </StyledCheckbox>
-        <StyledCreateButton onClick={() => onSubmit()} label="Create Account"/>
+        <StyledCreateButton onClick={() => onSubmit()} label="Create Account" />
       </div>
 
       <div className="signupgoogle" onClick={handleSign}>
@@ -188,4 +193,14 @@ const SignUpForm = () => {
     </StyledSecondcontainer>
   );
 }
-export default SignUpForm;
+
+
+const mapStateToProps = state => ({
+
+});
+
+const mapDispatchToProps = dispatch => ({
+  signUpUser: params => dispatch(signUpUser(params)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
