@@ -1,21 +1,20 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
+import styled from "styled-components";
 
 import { BsTrophy } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { AiTwotoneCalendar } from "react-icons/ai";
-import styled from "styled-components";
+
+import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "../atoms/button/Button";
 
 const StyledButton = styled(Button)`
-  background: white;
+  background: #c9082a;
   font-size: 20px;
-  font: normal normal medium 21px/25px Barlow;
-  letter-spacing: 0px;
-  color: #c9082a;
+  border: #c9082a;
+  color: #fff;
   opacity: 1;
-  border: 1px solid #c9082a;
   margin: 40% 20% 10% 0%;
 `;
 
@@ -29,7 +28,7 @@ const StyledForm = styled.form`
   margin: 10% 5% 10% 2%;
 `;
 
-function HeaderForm() {
+const headerForm = () => {
   return (
     <StyledForm>
       <div style={{ marginLeft: "20px" }}>
@@ -68,11 +67,11 @@ function HeaderForm() {
       <div style={{ marginRight: "20px" }}>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
-            <StyledButton>Search</StyledButton>
+            <StyledButton label="Search"/>
           </Grid>
         </Grid>
       </div>
     </StyledForm>
   );
 }
-export default HeaderForm;
+export default headerForm;

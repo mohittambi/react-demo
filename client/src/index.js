@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+
+import { store, history } from './helpers/store';
+
 import App from "./App";
-// import EventDetail from "./components/eventDetail"
-// import CreateEvent from "./components/createEvent/index"
+const rootElement = document.getElementById('root');
 
-ReactDOM.render(<App />, document.getElementById("root"));
-
-
-// ReactDOM.render(<CreateEvent />, document.getElementById("root"));
-
-
-// ReactDOM.render(<EventDetail />, document.getElementById("root"));
+ReactDOM.render(
+	<Provider store={store}>
+		<ConnectedRouter history={history}>
+			<App />
+		</ConnectedRouter>
+	</Provider>,
+	rootElement
+);

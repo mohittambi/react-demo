@@ -6,6 +6,12 @@ const StyledButtonComponent = styled.button`
 `;
 
 const Button = ({ ...props }) => {
-  return <StyledButtonComponent {...props} />;
+  return (
+    <StyledButtonComponent
+      {...props}
+    >
+      {props.label}
+    </StyledButtonComponent>
+  );
 };
 export default Button;

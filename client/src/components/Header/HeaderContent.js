@@ -13,26 +13,22 @@ const Styleddiv = styled.div`
   height: auto;
 `;
 
-const ButtonStyle = {
-  background: "#c9082a 0% 0% no-repeat padding-box",
-  width: "25%",
-  height: " 12%",
-  fontSize: "20px",
-  font: "normal normal medium 21px/25px Barlow",
-  letterSpacing: "0px",
-  color: Colors.white,
-  opacity: "1",
-  border: "none",
-  marginTop: "5%",
-};
+const StyledButton = styled(Button)`
+  background: #c9082a 0% 0% no-repeat padding-box;
+  width: 25%;
+  height:  12%;
+  fontSize: 20px;
+  color: ${Colors.white};
+  opacity: 1;
+  border: none;
+  marginTop: 5%;
+`;
 
 const StyledHeader = styled.div`
   text-align: left;
-  font: normal normal bold 45px/54px Barlow;
-  letter-spacing: 0px;
   color: #17408b;
   opacity: 1;
-  margin-top: 7%;
+  margin-top: 4rem;
   margin-left: 20px;
   display: flex;
   flex-direction: row;
@@ -40,12 +36,10 @@ const StyledHeader = styled.div`
     width: 50%;
     h2 {
       line-height: 70px;
-    
+
     }
     p {
       text-align: left;
-      font: normal normal 300 21px/25px Barlow;
-      letter-spacing: 0px;
       color: #17408b;
       opacity: 1;
     }
@@ -65,7 +59,7 @@ const StyledImage = styled.div`
   margin-right: 5px;
 `;
 
-function HeaderContent() {
+const HeaderContent = () => {
   return (
     <Styleddiv>
       <NavBar />
@@ -78,7 +72,7 @@ function HeaderContent() {
             </div>
           </p>
 
-          <Button style={ButtonStyle}>Create Group</Button>
+          <StyledButton label="Create Group"/>
         </div>
         <StyledImage>
           <img

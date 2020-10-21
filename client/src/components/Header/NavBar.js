@@ -13,8 +13,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       display: "block",
       textAlign: "left",
-      font: "normal normal medium 25px / 30px Barlow",
-      letterSpacing: "0px",
       color: "#C9082A",
       opacity: "1",
     },
@@ -30,19 +28,17 @@ const StyledAppBar = styled(AppBar)`
   box-shadow: none !important;
   width: 1005px;
   height: 58px;
-  
+
   .login,
   .signup {
     text-decoration: none;
-    font: normal normal medium 20px/24px Barlow;
-letter-spacing: 0px;
-color: #C9082A;
-opacity: 1;
+    color: #C9082A;
+    opacity: 1;
     }
   .signup {
     margin-left: 20px;
     margin-right: 60px;
-    
+
   }
 }
 `;

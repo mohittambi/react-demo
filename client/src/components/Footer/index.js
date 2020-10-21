@@ -6,8 +6,6 @@ import styled from "styled-components";
 import Typography from "@material-ui/core/Typography";
 
 const StyledTypography = styled.h2`
-  font: normal normal medium 25px/30px Barlow;
-  letter-spacing: 0px;
   color: #c9082a;
 `;
 
