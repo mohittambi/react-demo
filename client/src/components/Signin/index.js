@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import { FcGoogle } from "react-icons/fc";
 import Typography from "../atoms/typography/Typography";
@@ -28,8 +28,17 @@ const StyledBox = styled.div`
   .box2 {
     width: 90%;
     height: 20vh;
-    margin-top: 4.5%;
   }
+`;
+
+const StyledCreateButton = styled(Button)`
+  background: #C9082A 0% 0% no-repeat padding-box;
+  color: #fff;
+  padding: 7px 14px;
+  margin-left: 5%;
+  font-size: 1.2rem;
+  margin-top: 3%;
+  border: none;
 `;
 
 const StyledInputComponent = styled(Input)`
@@ -101,31 +110,51 @@ const StyledSecond = styled.div`
 `;
 
 const SignInForm = () => {
+
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  const onUserChange = event => {
+    setUsername(event.target.value)
+  }
+
+  const onPasswordChange = event => {
+    setPassword(event.target.value)
+  }
+
+  const onSubmit = () => {
+    if (username && password) {
+      const info = {username, password}
+      console.log(info)
+      window.location.assign('/')
+    }
+  }
+
   return (
     <StyledSecond>
       <Typography style={StyledTypography} text="Welcome Back" />
       <StyledBox>
         <div className="box1">
           <Typography style={TypographyContent} text="Username/Email" />
-          <StyledInputComponent />
+          <StyledInputComponent type='text' onChange={(event) => onUserChange(event)} />
         </div>
         <div className="box1">
           <Typography style={TypographyContent} text="Password" />
-          <StyledInputComponent />
+          <StyledInputComponent type='password' onChange={(event) => onPasswordChange(event)} />
         </div>
       </StyledBox>
       <StyledLogin>
         <div>
-          <Button style={StyledButtonComponent}>Login </Button>
+        <StyledCreateButton onClick={() => onSubmit()} label="Login"/>
         </div>
-        <a href="#">Forgot Password?</a>
+        <a href="/login">Forgot Password?</a>
       </StyledLogin>
 
       <div className="logingoogle">
-        <a href="#">
+        <a href="/login">
           <FcGoogle className="googleicon" />
         </a>
-        <a href="#" className="login">
+        <a href="/login" className="login">
           Login with google
         </a>
       </div>
