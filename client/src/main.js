@@ -7,9 +7,12 @@ import AddEvent from "./pages/add-event";
 import AddGroup from "./group";
 import SignUp from "./signup";
 import SignIn from "./signin";
+import CreateEvent from "./components/createEvent/index"
+import EventDetail from "./components/eventDetail/index"
+
 
 const NavDiv = styled.div`
-  background: #c9082a 0% 0% no-repeat padding-box;
+  background: #C9082A 0% 0% no-repeat padding-box;
 
   & > ul {
     display: flex;
@@ -23,7 +26,7 @@ const NavDiv = styled.div`
       text-decoration: none;
       list-style: none;
 
-      font-weight: 800;
+      font-weight: 500;
       margin-bottom: 1%;
       .nav {
         color: white;
@@ -31,6 +34,7 @@ const NavDiv = styled.div`
       }
     }
   }
+  
   ul > li:last-child {
     margin-right: 50px;
   }
@@ -48,18 +52,24 @@ const Main = () => {
                   Home
                 </NavLink>
               </li>
+              <li> <NavLink to="/event-detail" className="nav">
+                Event detail
+                </NavLink>
+              </li>
+
               <li>
                 <NavLink to="/add-event" className="nav">
                   Add Event
                 </NavLink>
+
               </li>
             </ul>
           </NavDiv>
         )}
         <div className="content">
           <Route exact path="/" component={Home} />
-          <Route path="/add-event" component={AddEvent} />
-          <Route path="/add-group" component={AddGroup} />
+          <Route path="/add-event" component={CreateEvent} />
+          <Route path="/event-detail" component={EventDetail} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/login" component={SignIn} />
         </div>

@@ -3,7 +3,6 @@ import { FaFacebook } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import styled from "styled-components";
-import "./Footer.css";
 import Typography from "@material-ui/core/Typography";
 
 const StyledTypography = styled.h2`
@@ -15,7 +14,7 @@ const StyledTypography = styled.h2`
 const StyledContainer = styled.div`
    {
     background: #efefef 0% 0% no-repeat padding-box;
-    opacity: 0.6;
+    opacity: 1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
