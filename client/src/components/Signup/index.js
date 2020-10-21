@@ -1,78 +1,167 @@
 import React from "react";
 import Checkbox from "@material-ui/core/Checkbox";
-import Button from "@material-ui/core/Button";
 import { FcGoogle } from "react-icons/fc";
 import styled from "styled-components";
 
-const StyledButton = styled(Button)`
-  background-color: rgb(253, 38, 74);
-  color: #fff;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  padding: 7px 14px;
-  border-radius: 0px;
-  margin-left: 5%;
-  font-size: 1.2rem;
-  margin-top: 3%;
+import Typography from "../atoms/typography/Typography";
+import Button from "../atoms/button/Button";
+import Input from "../atoms/input/InputField";
+
+const StyledSecondcontainer = styled.div`
+  width: 50%;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  height: auto;
+  margin-left: 15%;
+  .header {
+    text-align: right;
+    margin-top: 5%;
+    max-width: 100%;
+    margin-right: 8%;
+    a {
+      text-decoration: none;
+    }
+  }
+  .signupgoogle {
+    background-color: white;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    .googleicon {
+      text-align: center;
+      font-size: 3.5rem;
+      margin-top: 1%;
+    }
+    .signup {
+      margin-left: 1%;
+      font-size: 1.3rem;
+      margin-top: 2.5%;
+
+      font: normal normal medium 20px/24px Barlow;
+      letter-spacing: 0px;
+      color: #17408b;
+    }
+  }
+`;
+
+const StyledTypography = {
+  marginBottom: "0.5%",
+  width: "200px",
+  height: "40px",
+  border: "none",
+  marginLeft: "5% ",
+  color: "#003b6f",
+};
+
+const StyledCreateButton = {
+  background: "#C9082A 0% 0% no-repeat padding-box",
+  color: "#fff",
+  padding: "7px 14px",
+  marginLeft: "5%",
+  fontSize: "1.2rem",
+  marginTop: "3%",
+  border: "none",
+};
+
+const StyledInput = {
+  border: "none",
+  color: "#003b6f",
+  width: "290px",
+  marginLeft: "10px",
+  borderRadius: "7px",
+  height: "60%",
+};
+
+const StyledBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  margin-left: 3%;
+`;
+const StyledCheckbox = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  margin-top: 7%;
+  margin-left: 4%;
 `;
 
 function SignUpForm() {
+
+
+  const handleChange = () => {
+    console.log("Registering")
+  }
+
+  const handleCreate = () => {
+    console.log("Create Account")
+  }
+
+  const handleSign = () => {
+    console.log("Signup")
+  }
   return (
-    <div className="secondcontainer">
+    <StyledSecondcontainer>
       <div className="header">
-        <a href="signin">
+        <a href="login">
           Already a memeber? <b style={{ color: "#003b6f" }}>Sign in</b>
         </a>
       </div>
       <form>
-        <div className="box1">
+        <StyledBox>
           <div>
-            <h3>Name</h3>
-            <input />
+            <Typography style={StyledTypography} text="Name" />
+            <Input style={StyledInput} />
           </div>
           <div>
-            <h3>User Name</h3>
-            <input />
+            <Typography style={StyledTypography} text="User Name" />
+            <Input style={StyledInput} />
           </div>
-        </div>
-        <div className="box">
+        </StyledBox>
+        <StyledBox>
           <div>
-            <h3>Phone No.</h3>
-            <input />
-          </div>
-          <div>
-            <h3>Email Id</h3>
-            <input />
-          </div>
-        </div>
-        <div className="box">
-          <div>
-            <h3>Password</h3>
-            <input />
+            <Typography style={StyledTypography} text="Phone No." />
+            <Input style={StyledInput} />
           </div>
           <div>
-            <h3>Confirm Password</h3>
-            <input />
+            <Typography style={StyledTypography} text="Email Id" />
+            <Input style={StyledInput} />
           </div>
-        </div>
-        <div className="box2">
-          <div className="checkboxfooter">
-            <div className="icon">
-              <Checkbox />
+        </StyledBox>
+        <StyledBox>
+          <div>
+            <Typography style={StyledTypography} text="Password" />
+            <Input style={StyledInput} type="password" />
+          </div>
+          <div>
+            <Typography style={StyledTypography} text="Confirm Password" />
+            <Input style={StyledInput} type="password" />
+          </div>
+        </StyledBox>
+        <div>
+          <StyledCheckbox>
+            <div>
+              <Checkbox onClick={handleChange} />
             </div>
             <p>
-              By registring on this website you agree to our Terms of services
+              By registering on this website you agree to our Terms of services
               and privacy policy
             </p>
-          </div>
-          <StyledButton>Create Account</StyledButton>
+          </StyledCheckbox>
+          <Button style={StyledCreateButton} onClick={handleCreate}>Create Account</Button>
         </div>
       </form>
 
-      <div className="signupgoogle">
+      <div className="signupgoogle" onClick={handleSign}>
         <FcGoogle className="googleicon" />
         <div className="signup">Sign up with Google</div>
       </div>
-    </div>
+    </StyledSecondcontainer>
   );
 }
 export default SignUpForm;

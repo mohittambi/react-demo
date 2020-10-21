@@ -4,53 +4,72 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import "./NavBar.css";
+import styled from "styled-components";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
-      color: "rgb(253, 38, 74)",
+      textAlign: "left",
+      font: "normal normal medium 25px / 30px Barlow",
+      letterSpacing: "0px",
+      color: "#C9082A",
+      opacity: "1",
     },
   },
 }));
+
+const StyledNav = styled.div`
+  margin-left: 8px;
+`;
+
+const StyledAppBar = styled(AppBar)`
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  width: 1005px;
+  height: 58px;
+  
+  .login,
+  .signup {
+    text-decoration: none;
+    font: normal normal medium 20px/24px Barlow;
+letter-spacing: 0px;
+color: #C9082A;
+opacity: 1;
+    }
+  .signup {
+    margin-left: 20px;
+    margin-right: 60px;
+    
+  }
+}
+`;
 
 export default function NavBar() {
   const classes = useStyles();
 
   return (
-    <div style={{ backgroundColor: "rgb(253, 247, 247)", marginLeft: "8px" }}>
-      <AppBar
-        position="static"
-        style={{
-          backgroundColor: "rgb(250, 246, 246)",
-          borderBottom: "none",
-          boxShadow: "none",
-        }}
-      >
+    <StyledNav>
+      <StyledAppBar>
         <Toolbar>
           <IconButton />
-          <Typography
-            style={{ fontSize: "20px", fontFamily: "Lora, serif" }}
-            className={classes.title}
-            variant="h6"
-            noWrap
-          >
+          <Typography className={classes.title} variant="h6" noWrap>
             Fit N Club
           </Typography>
           <div>
-            <a className="login" href="#">
+            <a className="login" href="./login">
               Login
             </a>
           </div>
           <div>
-            <a className="signup" href="#">
-              SignUp
+            <a className="signup" href="./sign-up">
+              Sign Up
             </a>
           </div>
         </Toolbar>
-      </AppBar>
-    </div>
+      </StyledAppBar>
+    </StyledNav>
   );
 }

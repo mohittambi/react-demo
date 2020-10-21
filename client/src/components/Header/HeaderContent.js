@@ -1,44 +1,95 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import "./HeaderContent.css";
 import HeaderForm from "./HeaderForm";
 import NavBar from "./NavBar";
 import styled from "styled-components";
+import Button from "../atoms/button/Button";
+import Colors from "../Util/constants";
 
-const StyledButton = styled(Button)`
-font-size: 15px,
-width: 200px,
-height: 40px,
-word-spacing: 8px,
+const Styleddiv = styled.div`
+  width: 100%;
+  background: transparent linear-gradient(180deg, #ffffff 0%, #dcdcdc 100%) 0%
+    0% no-repeat padding-box;
+  opacity: 1;
+  height: auto;
+`;
+
+const ButtonStyle = {
+  background: "#c9082a 0% 0% no-repeat padding-box",
+  width: "25%",
+  height: " 12%",
+  fontSize: "20px",
+  font: "normal normal medium 21px/25px Barlow",
+  letterSpacing: "0px",
+  color: Colors.white,
+  opacity: "1",
+  border: "none",
+  marginTop: "5%",
+};
+
+const StyledHeader = styled.div`
+  text-align: left;
+  font: normal normal bold 45px/54px Barlow;
+  letter-spacing: 0px;
+  color: #17408b;
+  opacity: 1;
+  margin-top: 7%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  div:first-child {
+    width: 50%;
+    h2 {
+      line-height: 70px;
+    
+    }
+    p {
+      text-align: left;
+      font: normal normal 300 21px/25px Barlow;
+      letter-spacing: 0px;
+      color: #17408b;
+      opacity: 1;
+    }
+
+    .vl {
+      border-left: 3px solid rgb(253, 38, 74);
+      height: 40px;
+      padding: 3px;
+    }
+  }
+`;
+
+const StyledImage = styled.div`
+  margin-left: 35px;
+  width: 42%;
+  background-color: transparent;
+  margin-right: 5px;
 `;
 
 function HeaderContent() {
   return (
-    <>
+    <Styleddiv>
       <NavBar />
-      <div className="header">
-        <div className="header-left">
-          <h1> Sports Engagement Platform</h1>
+      <StyledHeader>
+        <div>
+          <h2> Sports Engagement Platform</h2>
           <p>
             <div className="vl">
-              Create or join event to build local community <br />
-              for daily sport
+              Create or join event to build local community for daily sport
             </div>
           </p>
 
-          <StyledButton variant="contained" color="secondary">
-            Create Group
-          </StyledButton>
+          <Button style={ButtonStyle}>Create Group</Button>
         </div>
-        <div className="header-img">
+        <StyledImage>
           <img
             src="https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg"
             alt="img"
-          ></img>
-        </div>
-      </div>
+            width="100%"
+          />
+        </StyledImage>
+      </StyledHeader>
       <HeaderForm />
-    </>
+    </Styleddiv>
   );
 }
 export default HeaderContent;

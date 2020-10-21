@@ -1,15 +1,37 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
 
 import { BsTrophy } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { AiTwotoneCalendar } from "react-icons/ai";
-import "./HeaderForm.css";
+import styled from "styled-components";
+import TextField from "@material-ui/core/TextField";
+import Button from "../atoms/button/Button";
+
+const StyledButton = styled(Button)`
+  background: white;
+  font-size: 20px;
+  font: normal normal medium 21px/25px Barlow;
+  letter-spacing: 0px;
+  color: #c9082a;
+  opacity: 1;
+  border: 1px solid #c9082a;
+  margin: 40% 20% 10% 0%;
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  width: 92%;
+  height: 10vh;
+  margin: 10% 5% 10% 2%;
+`;
+
 function HeaderForm() {
   return (
-    <div className="form">
+    <StyledForm>
       <div style={{ marginLeft: "20px" }}>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
@@ -43,29 +65,14 @@ function HeaderForm() {
         </Grid>
       </div>
 
-      <div>
+      <div style={{ marginRight: "20px" }}>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
-            <Button
-              variant="contained"
-              color="primary"
-              style={{
-                backgroundColor: "white",
-                borderRadius: "0px",
-                border: "1px solid rgb(253, 38, 74)",
-                width: "150px",
-                color: "rgb(253, 38, 74)",
-                marginTop: "17px",
-                marginBottom: "5px",
-                marginRight: "20px",
-              }}
-            >
-              Search
-            </Button>
+            <StyledButton>Search</StyledButton>
           </Grid>
         </Grid>
       </div>
-    </div>
+    </StyledForm>
   );
 }
 export default HeaderForm;

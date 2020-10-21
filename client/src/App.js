@@ -12,10 +12,10 @@ const App = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Main />
       <Footer />
-    </>
+    </React.Fragment>
   );
 };
 
