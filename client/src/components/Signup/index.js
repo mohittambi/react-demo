@@ -117,6 +117,10 @@ const SignUpForm = () => {
     setConfirmPassword(event.target.value)
   }
 
+  const handleSign = () => {
+    console.log('sign in')
+  };
+
   const onSubmit = () => {
     if (password === confirmPassword && terms) {
       const info = {name, username, phone, email, password, confirmPassword}
