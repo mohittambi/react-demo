@@ -97,30 +97,10 @@ const SignUpForm = () => {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [terms, setTerms] = useState(false)
 
-
-  const onNameChange = (event) => {
-    setName(event.target.value)
-  }
-  const onUsernameChange = (event) => {
-    setUsername(event.target.value)
-  }
-  const onPhoneChange = (event) => {
-    setPhone(event.target.value)
-  }
-  const onEmailChange = (event) => {
-    setEmail(event.target.value)
-  }
-  const onPasswordChange = (event) => {
-    setPassword(event.target.value)
-  }
-  const onConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value)
-  }
-
   const onSubmit = () => {
     if (password === confirmPassword && terms) {
       const info = {name, username, phone, email, password, confirmPassword}
-      window.location.assign("/")
+      // window.location.assign("/")
       console.log(info)
     } else if (password !== confirmPassword) {
         alert('Passwords did not Match. Try Again')
@@ -140,31 +120,31 @@ const SignUpForm = () => {
       <StyledBox>
         <div>
           <StyledTypography text="Name" />
-          <StyledInput type='text' onChange={(event) => onNameChange(event)} />
+          <StyledInput type='text' onChange={e => setName(e.target.value)} />
         </div>
         <div>
           <StyledTypography text="User Name" />
-          <StyledInput type='text' onChange={(event) => onUsernameChange(event)} />
+          <StyledInput type='text' onChange={e => setUsername(e.target.value)} />
         </div>
       </StyledBox>
       <StyledBox>
         <div>
           <StyledTypography text="Phone No." />
-          <StyledInput type='phone' onChange={(event) => onPhoneChange(event)} />
+          <StyledInput type='phone' onChange={e => setPhone(e.target.value)} />
         </div>
         <div>
           <StyledTypography text="Email Id" />
-          <StyledInput type='email' onChange={(event) => onEmailChange(event)} />
+          <StyledInput type='email' onChange={e => setEmail(e.target.value)} />
         </div>
       </StyledBox>
       <StyledBox>
         <div>
           <StyledTypography text="Password" />
-          <StyledInput type='password' onChange={(event) => onPasswordChange(event)} />
+          <StyledInput type='password' onChange={e => setPassword(e.target.value)} />
         </div>
         <div>
           <StyledTypography text="Confirm Password" />
-          <StyledInput type='password' onChange={(event) => onConfirmPasswordChange(event)} />
+          <StyledInput type='password' onChange={e => setConfirmPassword(e.target.value)} />
         </div>
       </StyledBox>
       <div>
@@ -184,4 +164,5 @@ const SignUpForm = () => {
     </StyledSecondcontainer>
   );
 }
+
 export default SignUpForm;
