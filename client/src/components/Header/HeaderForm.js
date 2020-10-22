@@ -9,32 +9,34 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "../atoms/button/Button";
 
-const StyledButton = styled(Button)`
-  background: #c9082a;
-  font-size: 20px;
-  border: #c9082a;
-  color: #fff;
-  opacity: 1;
-  margin: 40% 20% 10% 0%;
-`;
 
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  width: 92%;
-  height: 10vh;
-  margin: 10% 5% 10% 2%;
-`;
+import Form from "@material-ui/core/FormControl"
+
+const SearchButton = {
+  background: "white",
+  fontSize: "20px",
+  border: " 1px solid #c9082a",
+  color: "#c9082a",
+  margin: "40% 20% 10% 0%"
+}
+
+const StyledForm = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  background: "#ffffff 0% 0% no-repeat padding-box",
+  width: "92%",
+  height: "10vh",
+  margin: "10% 5% 10% 2%",
+}
 
 const headerForm = () => {
   return (
-    <StyledForm>
+    <Form style={StyledForm}>
       <div style={{ marginLeft: "20px" }}>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
-            <BsTrophy style={{ color: "grey" }} />
+            <BsTrophy style={{ color: "#A2A2A2" }} />
           </Grid>
           <Grid item>
             <TextField label="Sport" />
@@ -45,7 +47,7 @@ const headerForm = () => {
       <div>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
-            <GoLocation style={{ color: "grey" }} />
+            <GoLocation style={{ color: "#A2A2A2" }} />
           </Grid>
           <Grid item>
             <TextField label="Location" />
@@ -56,7 +58,7 @@ const headerForm = () => {
       <div>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
-            <AiTwotoneCalendar style={{ color: "grey" }} />
+            <AiTwotoneCalendar style={{ color: "#A2A2A2" }} />
           </Grid>
           <Grid item>
             <TextField label="Date" />
@@ -67,11 +69,11 @@ const headerForm = () => {
       <div style={{ marginRight: "20px" }}>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
-            <StyledButton label="Search"/>
+            <Button style={SearchButton} label="Search" />
           </Grid>
         </Grid>
       </div>
-    </StyledForm>
+    </Form>
   );
 }
 export default headerForm;

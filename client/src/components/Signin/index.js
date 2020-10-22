@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FcGoogle } from "react-icons/fc";
 import Typography from "../atoms/typography/Typography";
@@ -12,10 +12,15 @@ const StyledTypography = {
   textAlign: "start",
   marginLeft: "9%",
   color: Colors.blue,
+  fontSize: "2rem",
+  fontWeight: "700"
 
-  opacity: "1",
 };
+const StyledBox1 = {
+  width: "90 %",
+  height: "20vh"
 
+}
 const StyledBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,7 +29,6 @@ const StyledBox = styled.div`
   height: auto;
   margin-top: 5%;
 
-  .box1,
   .box2 {
     width: 90%;
     height: 20vh;
@@ -60,8 +64,7 @@ const StyledLogin = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-left: 5%;
-  width: 70%;
+  width: 82%;
   a {
     text-decoration: none;
     color: #17408b;
@@ -82,7 +85,7 @@ const StyledButtonComponent = {
 
 const StyledSecond = styled.div`
   width: 50%;
-  background: #f5f5f5 0% 0% no-repeat padding-box;
+  background: #F5F5F5 0% 0% no-repeat padding-box;
   .logingoogle {
     background-color: white;
     text-align: center;
@@ -109,6 +112,13 @@ const StyledSecond = styled.div`
   }
 `;
 
+
+
+const PasswordLink = {
+  margin: "3% 0 4% 5%"
+}
+
+
 const SignInForm = () => {
 
   const [username, setUsername] = useState('')
@@ -124,7 +134,7 @@ const SignInForm = () => {
 
   const onSubmit = () => {
     if (username && password) {
-      const info = {username, password}
+      const info = { username, password }
       console.log(info)
       window.location.assign('/')
     }
@@ -134,20 +144,20 @@ const SignInForm = () => {
     <StyledSecond>
       <Typography style={StyledTypography} text="Welcome Back" />
       <StyledBox>
-        <div className="box1">
+        <div style={StyledBox1}>
           <Typography style={TypographyContent} text="Username/Email" />
           <StyledInputComponent type='text' onChange={(event) => onUserChange(event)} />
         </div>
-        <div className="box1">
+        <div style={StyledBox1}>
           <Typography style={TypographyContent} text="Password" />
           <StyledInputComponent type='password' onChange={(event) => onPasswordChange(event)} />
         </div>
       </StyledBox>
       <StyledLogin>
         <div>
-        <StyledCreateButton onClick={() => onSubmit()} label="Login"/>
+          <StyledCreateButton onClick={() => onSubmit()} label="Login" />
         </div>
-        <a href="/login">Forgot Password?</a>
+        <a href="/login" style={PasswordLink} >Forgot Password?</a>
       </StyledLogin>
 
       <div className="logingoogle">

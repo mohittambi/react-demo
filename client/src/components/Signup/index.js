@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Checkbox from "@material-ui/core/Checkbox";
 import { FcGoogle } from "react-icons/fc";
 import styled from "styled-components";
@@ -17,7 +17,7 @@ const StyledSecondcontainer = styled.div`
     width: 90%;
     margin-left: 5%;
     margin-bottom: 5%;
-    margin-top: 5%;
+    margin-top: 10%;
     justify-content: center;
     display: flex;
     flex-direction: row;
@@ -37,19 +37,23 @@ const StyledSecondcontainer = styled.div`
 
 const StyledTopText = styled.div`
   text-align: right;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-right: 8%;
   a {
     text-decoration: none;
+      font-size: 1rem
+
+
   }
 `;
 
 const StyledTypography = styled(Typography)`
-  width: 200px;
+  width: 280px;
   height: 40px;
   border: none;
   margin: 0 1rem;
   color: #003b6f;
+  font-size: 1.2rem
 `;
 
 const StyledCreateButton = styled(Button)`
@@ -123,13 +127,13 @@ const SignUpForm = () => {
 
   const onSubmit = () => {
     if (password === confirmPassword && terms) {
-      const info = {name, username, phone, email, password, confirmPassword}
+      const info = { name, username, phone, email, password, confirmPassword }
       window.location.assign("/")
       console.log(info)
     } else if (password !== confirmPassword) {
-        alert('Passwords did not Match. Try Again')
+      alert('Passwords did not Match. Try Again')
     } else {
-        alert('Check On the Terms and Conditions and Privacy Policy')
+      alert('Check On the Terms and Conditions and Privacy Policy')
     }
   }
 
@@ -174,11 +178,11 @@ const SignUpForm = () => {
       <div>
         <StyledCheckbox>
           <div>
-            <Checkbox onClick={() => setTerms(!terms) }/>
+            <Checkbox onClick={() => setTerms(!terms)} />
           </div>
-          <Typography text="By registring on this website you agree to our Terms of services and privacy policy"/>
+          <Typography text="By registring on this website you agree to our Terms of services and privacy policy" />
         </StyledCheckbox>
-        <StyledCreateButton onClick={() => onSubmit()} label="Create Account"/>
+        <StyledCreateButton onClick={() => onSubmit()} label="Create Account" />
       </div>
 
       <div className="signupgoogle" onClick={handleSign}>

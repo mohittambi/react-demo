@@ -16,10 +16,10 @@ const StyledMain = styled.div`
   .firstcontainer {
     background-color: #fff;
     width: 50%;
-    padding-left: 15%;
+        padding-left: 10%;
     height: 100vh;
   }
-  h2 {
+  h1 {
     color: #17408b;
     margin-left: 15%;
     margin-top: 10%;
@@ -30,7 +30,7 @@ const SignIn = () => {
   return (
     <StyledMain>
       <div className="firstcontainer">
-        <h2>Let's Get Started</h2>
+        <h1>Let's Get Started</h1>
         <StyledTypography text="Complete the sign up process for engaging in sports" />
         <img
           src="https://image.shutterstock.com/image-vector/color-sport-background-football-basketball-260nw-1315841180.jpg"

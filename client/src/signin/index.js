@@ -4,7 +4,7 @@ import SignInForm from "../components/Signin";
 import Typography from "../components/atoms/typography/Typography";
 
 const StyledTypography = {
-  marginLeft: "15% ",
+  marginLeft: "5% ",
   fontSize: "1.2rem",
   color: "#17408b",
 };
@@ -18,6 +18,8 @@ const StyledMain = styled.div`
     background-color: #fff;
     width: 50%;
     height: 100vh;
+        padding-left: 10%;
+
   }
   h1 {
     color: #17408b;

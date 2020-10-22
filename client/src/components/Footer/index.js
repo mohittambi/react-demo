@@ -5,13 +5,11 @@ import { FiInstagram } from "react-icons/fi";
 import styled from "styled-components";
 import Typography from "@material-ui/core/Typography";
 
-const StyledTypography = styled.h2`
-  color: #c9082a;
-`;
 
 const StyledContainer = styled.div`
    {
-    background: #efefef 0% 0% no-repeat padding-box;
+
+    background: #F5F5F5 0% 0% no-repeat padding-box;
     opacity: 1;
     display: flex;
     flex-direction: row;
@@ -20,26 +18,8 @@ const StyledContainer = styled.div`
     height: auto;
     justify-content: space-around;
 
-    .box,
-    .boxicon {
-      width: 15%;
-      margin-top: 40px;
-      max-width: 100%;
-    }
-    .boxicon {
-      width: 20%;
-      margin-left: 5%;
-    }
-    ul {
-      list-style: none;
-    }
-    a {
-      text-decoration: none;
-      font-size: 15px;
-      color: rgb(100, 100, 100);
-    }
 
-    .footer-copyright {
+    .footerCopyright {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -49,84 +29,114 @@ const StyledContainer = styled.div`
       justify-content: space-around;
       align-items: center;
       margin-top: 5%;
-      a {
-        color: white;
-        font-size: 20px;
-      }
+     
     }
   }
 `;
 
+const StyledTypography = styled.h2`
+  color: #c9082a;
+`;
+const StyledContent = {
+  color: "#7D7D7D"
+}
+const Box = {
+  display: "flex",
+  flexDirection: "column",
+  width: "15%",
+  marginTop: "40px"
+
+}
+
+const BoxIcon = {
+  width: "20%",
+  marginLeft: "5%",
+  width: "15%",
+  marginTop: "40px",
+  textAlign: "center"
+
+}
+const Icon = {
+  fontSize: "2.5rem",
+  padding: "10px"
+}
+const StyledLink = {
+
+
+  textDecoration: "none",
+  fontSize: "1rem",
+  color: "#7D7D7D"
+
+
+}
+
+const StyledFooter = {
+  color: "white",
+  textDecoration: "none",
+  fontSize: "1rem"
+}
+
+
+
+
 const Footer = () => {
   return (
-    <React.Fragment>
+    <>
       <StyledContainer>
-        <div className="box">
+        <div style={Box} >
           <StyledTypography>About Fit N Club</StyledTypography>
-          <Typography>
+          <Typography style={StyledContent}>
             lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
             ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum
             lorem ipsum lorem ipsum
           </Typography>
         </div>
-        <div className="box">
+        <div style={Box} >
           <StyledTypography>Supports</StyledTypography>
-          <ul>
-            <li>
-              <a href="#">Centers</a>
-            </li>
-            <li>
-              <a href="#">FAQ's</a>
-            </li>
-            <li>
-              <a href="#">Help</a>
-            </li>
-            <li>
-              <a href="#">Feedback</a>
-            </li>
-          </ul>
+
+          <a href="#" style={StyledLink}>Centers</a>
+
+          <a href="#" style={StyledLink}>FAQ's</a>
+          <a href="#" style={StyledLink}>Help</a>
+          <a href="#" style={StyledLink}>Feedback</a>
+
         </div>
-        <div className="box">
+        <div style={Box} >
           <StyledTypography>Contacts</StyledTypography>
 
-          <Typography>
+          <Typography style={StyledContent}>
             74th Gali raja chowk, harihar nagar old colony, Jaipur-10
           </Typography>
-          <ul>
-            <li>
-              <a href="#">+9924447684</a>
-            </li>
-            <li>
-              <a href="#">+9924447684</a>
-            </li>
-          </ul>
+          <a href="#" style={StyledLink}>+9924447684</a>
+          <a href="#" style={StyledLink}>+9924447684</a>
+
         </div>
-        <div className="boxicon" style={{ textAlign: "center" }}>
+        <div style={BoxIcon} >
           <StyledTypography>Follow us</StyledTypography>
-          <a href="#">
-            <FaFacebook className="icon1" />
+          <a href="#" style={StyledLink}>
+            <FaFacebook style={Icon} />
           </a>
-          <a href="#">
-            <FiTwitter className="icon2" />
+          <a href="#" style={StyledLink}>
+            <FiTwitter style={Icon} />
           </a>
-          <a href="#">
-            <FiInstagram className="icon3" />
+          <a href="#" style={StyledLink}>
+            <FiInstagram style={Icon} />
           </a>
         </div>
 
-        <div className="footer-copyright">
-          <a href="#" className="footer">
+        <div className="footerCopyright">
+          <a href="#" style={StyledFooter}>
             @Copyright Reserve {new Date().getFullYear()}
           </a>
-          <a href="#" className="footer">
+          <a href="#" style={StyledFooter}>
             Term & Conditions
           </a>
-          <a href="#" className="footer">
+          <a href="#" style={StyledFooter}>
             Privacy and Policy
           </a>
         </div>
       </StyledContainer>
-    </React.Fragment>
+    </>
   );
 };
 

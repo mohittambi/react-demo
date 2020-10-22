@@ -5,12 +5,16 @@ const StyledButtonComponent = styled.button`
   width: auto;
 `;
 
-const Button = ({ ...props }) => {
+
+const Button = ({ icon, text, ...props }) => {
   return (
     <StyledButtonComponent
       {...props}
     >
       {props.label}
+      {icon}
+      {text}
+
     </StyledButtonComponent>
   );
 };

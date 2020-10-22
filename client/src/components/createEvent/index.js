@@ -60,7 +60,7 @@ const StyledButton = {
     border: "1px solid red",
     backgroundColor: "white",
     padding: "10px",
-    color: "red"
+    color: "red",
 
 }
 
@@ -72,6 +72,10 @@ const StyledSelect = {
     fontSize: "1rem",
     padding: "10px",
 }
+
+
+
+
 const ContainerActivity = {
     marginLeft: "5%",
     display: "flex",
@@ -124,7 +128,6 @@ const AddmemberHeading = {
 }
 const AddCohostHeading = {
     textAlign: "left",
-    font: "normal normal medium 35px / 42px Barlow",
     letterSpacing: "0px",
     color: "#000000",
     fontSize: "1.3rem",
@@ -168,8 +171,7 @@ const StartedButton = {
 
 const PlayButton = {
     fontSize: "1rem",
-    marginTop: "2%",
-    marginLeft: "4%",
+    margin: "2% 0 0 4%",
 }
 const PlusButton = {
     fontSize: "2rem",
@@ -203,7 +205,7 @@ const CreateEvent = () => {
                             <Typography text="Title" style={StyledHeading} />
                             <Input style={StyledInput} placeholder="Enter name of Event"
                             ></Input>
-                            <Button style={StyledButton} ><HiOutlinePlus />   Add Description</Button >
+                            <Button style={StyledButton} text="Add Description" icon={<HiOutlinePlus />}>  </Button >
 
                         </div>
                         <div style={ContainerActivity}>
@@ -256,13 +258,13 @@ const CreateEvent = () => {
                         <Typography text="Add Members" style={AddmemberHeading} />
                         <BsPlusSquare style={PlusButton} onClick={handleChange} />
                         <div>
-                            <Input style={AddInput} placeholder="Enter Email Id (Non Menbers)"></Input><Button style={InviteButton} >Send Invite</Button>
+                            <Input style={AddInput} placeholder="Enter Email Id (Non Menbers)"></Input><Button style={InviteButton} text="Send Invite"></Button>
                         </div>
 
                         <DynamicCSS />
                         <div>
                             <Typography text="Add Co-Host" style={AddCohostHeading} />
-                            <Input style={AddInput} placeholder="Enter Email Id / Name"></Input><Button style={InviteButton} >Request</Button>
+                            <Input style={AddInput} placeholder="Enter Email Id / Name"></Input><Button style={InviteButton} text="Request"></Button>
 
                         </div>
 
@@ -270,9 +272,8 @@ const CreateEvent = () => {
                             <RadioButtonsGroup style={{ marginTop: "4%" }} />
                         </div>
                         <div style={{ textAlign: "right", marginRight: "29%" }}>
-                            <Button style={StartedButton}  >
-                                Let's Get Started
-                                <GrLinkNext style={PlayButton} />
+                            <Button style={StartedButton} text="Let's Get Started" icon={<GrLinkNext style={PlayButton} />
+                            }>
                             </Button>
                         </div>
                     </div>

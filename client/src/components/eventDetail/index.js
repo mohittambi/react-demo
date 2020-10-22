@@ -19,7 +19,8 @@ import { HiOutlinePlus } from "react-icons/hi"
 const Container = {
     display: "flex",
     flexDirection: "row",
-    margin: "2%"
+    margin: "2%",
+    background: "#F5F5F5"
 }
 
 const LeftContainer = {
@@ -43,18 +44,18 @@ const SecondCheckbox = {
     marginLeft: "30%"
 }
 const ThirdCheckbox = {
-    marginLeft: "33%"
+    marginLeft: "32%"
 }
 const FourthCheckbox = {
     marginTop: "2%"
 }
 const FifthCheckbox = {
-    marginLeft: "30%",
+    marginLeft: "30.5%",
     marginTop: "2%"
 }
 
 const SixCheckbox = {
-    marginLeft: "36%",
+    marginLeft: "35%",
     marginTop: "2%"
 }
 
@@ -116,12 +117,9 @@ const InviteButton = {
     color: "white  ",
     backgroundColor: "#C9082A",
     border: "none",
+    marginBottom: "5%"
 }
 
-const PlusIcon = {
-    marginRight: "4%",
-
-}
 
 const EventDetail = () => {
 
@@ -181,7 +179,7 @@ const EventDetail = () => {
 
                         <Invitees />
                         <Button style={InviteButton
-                        }><HiOutlinePlus style={PlusIcon} />Invite</Button>
+                        } text="Invite" icon={<HiOutlinePlus />}></Button>
                     </div>
 
                 </div>
@@ -196,7 +194,7 @@ const EventDetail = () => {
                         <Typography style={HostingTypography} text="Co-Hosted By" />
                     </div>
                     <div style={ButtonContainer}>
-                        <Button style={ShareButton}><RiShareForwardLine style={ShareIcon} /><span>share</span></Button>
+                        <Button style={ShareButton} text="share " icon={<RiShareForwardLine />} />
                     </div>
                     <div style={{ marginTop: "20%" }}>
                         <div><BiCalendar style={{ marginRight: "2%" }} /> <span>{date}</span>

@@ -27,7 +27,7 @@ const StyledAppBar = styled(AppBar)`
   background-color: #ffffff !important;
   box-shadow: none !important;
   width: 1005px;
-  height: 58px;
+  height: 60px;
 
   .login,
   .signup {

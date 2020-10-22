@@ -5,6 +5,10 @@ import styled from "styled-components";
 import Button from "../atoms/button/Button";
 import Colors from "../Util/constants";
 
+
+
+import Typography from "@material-ui/core/Typography"
+
 const Styleddiv = styled.div`
   width: 100%;
   background: transparent linear-gradient(180deg, #ffffff 0%, #dcdcdc 100%) 0%
@@ -13,16 +17,16 @@ const Styleddiv = styled.div`
   height: auto;
 `;
 
-const StyledButton = styled(Button)`
-  background: #c9082a 0% 0% no-repeat padding-box;
-  width: 25%;
-  height:  12%;
-  fontSize: 20px;
-  color: ${Colors.white};
-  opacity: 1;
-  border: none;
-  marginTop: 5%;
-`;
+const StyledButton = {
+  background: "#c9082a 0% 0% no-repeat padding-box",
+  width: "25%",
+  height: "12%",
+  fontSize: "1.3rem",
+  color: "white",
+  opacity: "1",
+  border: "none",
+
+}
 
 const StyledHeader = styled.div`
   text-align: left;
@@ -36,12 +40,8 @@ const StyledHeader = styled.div`
     width: 50%;
     h2 {
       line-height: 70px;
+      font-size: 3.5rem
 
-    }
-    p {
-      text-align: left;
-      color: #17408b;
-      opacity: 1;
     }
 
     .vl {
@@ -51,6 +51,18 @@ const StyledHeader = styled.div`
     }
   }
 `;
+
+
+const StyledTypography = {
+
+
+  textAlign: "left",
+  color: "#17408b",
+  opacity: "1",
+  fontSize: "1rem ",
+  margin: "10% 0 5% 0"
+
+}
 
 const StyledImage = styled.div`
   margin-left: 35px;
@@ -66,13 +78,13 @@ const HeaderContent = () => {
       <StyledHeader>
         <div>
           <h2> Sports Engagement Platform</h2>
-          <p>
+          < Typography style={StyledTypography}>
             <div className="vl">
               Create or join event to build local community for daily sport
             </div>
-          </p>
+          </Typography >
 
-          <StyledButton label="Create Group"/>
+          <Button style={StyledButton} label="Create Group" />
         </div>
         <StyledImage>
           <img
