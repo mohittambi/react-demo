@@ -1,5 +1,5 @@
 import React from "react";
-import APIClient from './auth/api';
+// import APIClient from '../../../auth/api';
 
 import {
 	USER_SIGN_UP_REQUEST,
@@ -15,7 +15,8 @@ export const signUpUser = params => dispatch => {
 	dispatch({ type: USER_SIGN_UP_REQUEST });
 	dispatch({ type: USER_SIGN_UP_DATA, data: null });
 
-	const apiClient = new APIClient();
+	// const apiClient = new APIClient();
+	const apiClient = [];
 	return apiClient
 		.request(SIGN_UP_USER, params)
 		.then(({ data }) => {
@@ -24,6 +25,6 @@ export const signUpUser = params => dispatch => {
 		})
 		.catch(({ message }) => {
 			dispatch({ type: USER_SIGN_UP_RESPONSE });
-			dispatch(addFlashMessage({ message: message }));
+			// dispatch(addFlashMessage({ message: message }));
 		});
 };
