@@ -114,14 +114,6 @@ const SignInForm = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const onUserChange = event => {
-    setUsername(event.target.value)
-  }
-
-  const onPasswordChange = event => {
-    setPassword(event.target.value)
-  }
-
   const onSubmit = () => {
     if (username && password) {
       const info = {username, password}
@@ -136,11 +128,11 @@ const SignInForm = () => {
       <StyledBox>
         <div className="box1">
           <Typography style={TypographyContent} text="Username/Email" />
-          <StyledInputComponent type='text' onChange={(event) => onUserChange(event)} />
+          <StyledInputComponent type='text' onChange={e => setUsername(e.target.value)} />
         </div>
         <div className="box1">
           <Typography style={TypographyContent} text="Password" />
-          <StyledInputComponent type='password' onChange={(event) => onPasswordChange(event)} />
+          <StyledInputComponent type='password' onChange={e => setPassword(e.target.value)} />
         </div>
       </StyledBox>
       <StyledLogin>

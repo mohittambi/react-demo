@@ -1,0 +1,12 @@
+.bottom {
+  margin: 20px;
+}
+
+.bottom__cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin-bottom: -10px;
+}
